@@ -4,14 +4,14 @@ module Labelary
       self.new(*args).render
     end
 
-    def initialize(zpl, dpmm = nil, width = nil, height = nil, index = nil, content_type = nil, font = nil)
+    def initialize(zpl, args = {})
       @zpl    ||= zpl
-      @dpmm   ||= dpmm   || config.dpmm
-      @width  ||= width  || config.width
-      @height ||= height || config.height
-      @index  ||= index  || config.index
-      @content_type ||= content_type || config.content_type
-      @font ||= font || config.font
+      @dpmm   ||= args[:dpmm] || config.dpmm
+      @width  ||= args[:width] || config.width
+      @height ||= args[:height] || config.height
+      @index  ||= args[:index] || config.index
+      @content_type ||= args[:content_type] || config.content_type
+      @font ||= args[:font] || config.font
 
       raise 'Invalid dpmm'   if @dpmm.nil?
       raise 'Invalid width'  if @width.nil?
