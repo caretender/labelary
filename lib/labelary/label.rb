@@ -4,8 +4,8 @@ module Labelary
       self.new(*args).render
     end
 
-    def initialize(dpmm: nil, width: nil, height: nil, index: nil, zpl:, content_type: nil, font: nil)
-      @zpl    ||= zpl
+    def initialize(zpl, dpmm = nil, width = nil, height = nil, index = nil, content_type = nil, font = nil)
+      @zpl    ||= args[:zpl
       @dpmm   ||= dpmm   || config.dpmm
       @width  ||= width  || config.width
       @height ||= height || config.height
