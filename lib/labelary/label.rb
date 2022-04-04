@@ -1,7 +1,7 @@
 module Labelary
   class Label
-    def self.render(*args)
-      new(*args).render
+    def self.render(**args)
+      new(**args).render
     end
 
     def initialize(zpl, args = {})
