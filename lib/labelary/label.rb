@@ -1,7 +1,7 @@
 module Labelary
   class Label
-    def self.render(**args)
-      self.new(**args).render
+    def self.render(*args)
+      new(*args).render
     end
 
     def initialize(zpl, args = {})
@@ -21,8 +21,9 @@ module Labelary
     # http://labelary.com/service.html
     def render
       payload = font_string + @zpl
-      response = Labelary::Client.connection.post "/v1/printers/#{@dpmm}dpmm/labels/#{@width}x#{@height}/#{@index}/", payload, { Accept: @content_type }
-      return response.body
+      response = Labelary::Client.connection.post "/v1/printers/#{@dpmm}dpmm/labels/#{@width}x#{@height}/#{@index}/",
+                                                  payload, { Accept: @content_type }
+      response.body
     end
 
     def font_string
@@ -34,6 +35,5 @@ module Labelary
     def config
       @config ||= Labelary.configuration
     end
-
   end
 end
