@@ -1,5 +1,4 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'labelary/version'
 
@@ -9,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Robert Coleman']
   spec.email         = ['github@robert.net.nz']
 
-  spec.summary       = %q{Ruby Gem to interact with the Labelary.com ZPL Web Service}
-  spec.description   = %q{Ruby Gem to interact with the Labelary.com ZPL Web Service}
+  spec.summary       = 'Ruby Gem to interact with the Labelary.com ZPL Web Service'
+  spec.description   = 'Ruby Gem to interact with the Labelary.com ZPL Web Service'
   spec.homepage      = 'https://github.com/rjocoleman/labelary'
   spec.license       = 'MIT'
 
@@ -19,12 +18,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = ">= 2.0"
+  spec.required_ruby_version = '>= 2.0'
 
   spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'rake'
 
-  spec.add_dependency 'faraday', '>= 0.9', '< 2'
-  spec.add_dependency 'faraday_middleware', '>= 0.10', '< 2'
+  spec.add_dependency 'faraday', '>= 0.9', '< 3'
+  spec.add_dependency 'faraday_middleware', '>= 0.10', '< 3'
 end
